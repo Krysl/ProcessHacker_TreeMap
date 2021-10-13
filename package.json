@@ -2,6 +2,9 @@
   "name": "ph-treemap",
   "version": "1.0.0",
   "license": "MIT",
+  "scripts": {
+    "start": "vite serve"
+  },
   "dependencies": {
     "@types/d3": "^7.0.0",
     "d3-dsv": "3.0.1",
