@@ -1,19 +1,38 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
-  <script type="module" crossorigin src="./assets/index.2f756172.js"></script>
-  <link rel="modulepreload" href="./assets/vendor.1e24b5dd.js">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script type="module" crossorigin src="./assets/index.8c6103dc.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.f914d293.js">
   <link rel="stylesheet" href="./assets/index.3cf7b722.css">
 </head>
 
 <body>
-  <div style="display: inline-flex;">
+  <div id="titlebar" style="display: flex;">
     <input type="file" name="inputfile" id="inputfile" style="width: 25em;">
+    <p id="tips" style="font-weight: bold;">
+      The following is for demonstration, please upload the "Process Hacker Processes.csv" file to show your own memory
+      usage's TeeeMap
+    </p>
+    &nbsp;&nbsp;&nbsp;
+    <form>
+      Color Mode
+      <select id="color-mode">
+      </select>
+      &nbsp;&nbsp;&nbsp;
+      <input id="sort-by-size" type="checkbox">
+      Sort by Size
+    </form>
+    <div id="github_button" style="margin-left: auto; height: 23px;">
+      <a class="github-button" href="https://github.com/krysl/ProcessHacker_TreeMap" data-size="large"
+        data-show-count="true" aria-label="Star krysl/ProcessHacker_TreeMap on GitHub">Star</a>
+    </div>
   </div>
   <div id="d3-output"></div>
-  <!-- <pre id="output"></pre> -->
   
+
 </body>
 
 </html>
