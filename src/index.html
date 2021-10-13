@@ -1,16 +1,35 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="./base.css" />
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
 <body>
-  <div style="display: inline-flex;">
+  <div id="titlebar" style="display: flex;">
     <input type="file" name="inputfile" id="inputfile" style="width: 25em;">
+    <p id="tips" style="font-weight: bold;">
+      The following is for demonstration, please upload the "Process Hacker Processes.csv" file to show your own memory
+      usage's TeeeMap
+    </p>
+    &nbsp;&nbsp;&nbsp;
+    <form>
+      Color Mode
+      <select id="color-mode">
+      </select>
+      &nbsp;&nbsp;&nbsp;
+      <input id="sort-by-size" type="checkbox">
+      Sort by Size
+    </form>
+    <div id="github_button" style="margin-left: auto; height: 23px;">
+      <a class="github-button" href="https://github.com/krysl/ProcessHacker_TreeMap" data-size="large"
+        data-show-count="true" aria-label="Star krysl/ProcessHacker_TreeMap on GitHub">Star</a>
+    </div>
   </div>
   <div id="d3-output"></div>
-  <!-- <pre id="output"></pre> -->
   <script type="module" src="./index.ts"></script>
+
 </body>
 
 </html>
