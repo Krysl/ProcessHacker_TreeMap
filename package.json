@@ -1,0 +1,14 @@
+{
+  "name": "ph-treemap",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@types/d3": "^7.0.0",
+    "d3-dsv": "3.0.1",
+    "d3": "^7.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "vite": "^2.6.7"
+  }
+}
