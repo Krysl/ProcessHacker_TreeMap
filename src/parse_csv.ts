@@ -1,8 +1,11 @@
 import { csvParse } from 'd3-dsv';
+import { alerted_set } from './configs/data-src';
 
-interface TreeNode {
+export interface TreeNode {
   name: string,
-  value: number,
+  privateBytes: number,
+  workingSet: number,
+  cpu: number,
   description: string,
   commandLine: string,
   index: number,
@@ -24,11 +27,35 @@ function getTreeStr(tree: TreeNode): string {
   return str;
 }
 
+function parseMemorySize(memSizeStr: string): number {
+  let memSize = 0;
+  if (memSizeStr.includes('kB')) {
+    memSize = parseFloat(memSizeStr) * 1000;
+  } else if (memSizeStr.includes('MB')) {
+    memSize = parseFloat(memSizeStr) * 1000 * 1000;
+  } else if (memSizeStr.includes('GB')) {
+    memSize = parseFloat(memSizeStr) * 1000 * 1000 * 1000;
+  } else if (memSizeStr === 'null') {
+    memSize = 'null';
+  }
+  return memSize;
+}
+function parseCPU(cpuStr: string): number {
+  let cpu = 0;
+  if (cpuStr === 'null') {
+    cpu = 'null';
+  } else {
+    cpu = parseFloat(cpuStr)
+  }
+  return cpu;
+}
+
 export function parseCSV(csvData: string): TreeNode {
   const csvStart = csvData.indexOf('"');
   const records = csvParse(csvData.slice(csvStart));
   const csvInfo = csvData.slice(0, csvStart - 2);
   console.log(csvInfo);
+  alerted_set(false);
   // console.log(records);
   let root: TreeNode = { name: '/', description: csvInfo, index: -1, depth: -1, children: [] };
   let preDepth = -1;
@@ -43,17 +70,14 @@ export function parseCSV(csvData: string): TreeNode {
     const depth = (oldlen - name.length) / 2;
     let pathStr = "";
     const priBytesStr = row['Private bytes'];
-    let priBytes: number = 0;
-    if (priBytesStr.includes('kB')) {
-      priBytes = parseFloat(priBytesStr) * 1000;
-    } else if (priBytesStr.includes('MB')) {
-      priBytes = parseFloat(priBytesStr) * 1000 * 1000;
-    } else if (priBytesStr.includes('GB')) {
-      priBytes = parseFloat(priBytesStr) * 1000 * 1000 * 1000;
-    }
-    const newObj = {
+    const workingSetStr = row['Working set'] ?? 'null';
+    const cpuStr = row['CPU'] ?? 'null';
+
+    const newObj: TreeNode = {
       name: name.replace(".exe", ''),
-      value: priBytes,
+      privateBytes: parseMemorySize(priBytesStr),
+      workingSet: parseMemorySize(workingSetStr),
+      cpu: parseCPU(cpuStr),
       description: row.Description,
       commandLine: row['Command line'],
       index: index,
@@ -62,9 +86,10 @@ export function parseCSV(csvData: string): TreeNode {
     };
 
     if (depth > preDepth) {
-      const move2Child = {
+      const move2Child: TreeNode = {
         name: preObj.name,
-        value: preObj.value,
+        privateBytes: preObj.privateBytes,
+        workingSet: preObj.workingSet,
         description: preObj.description,
         commandLine: preObj.commandLine,
         index: preObj.index + 0.5,
@@ -72,7 +97,8 @@ export function parseCSV(csvData: string): TreeNode {
         children: null
       }
       preObj.name += '+...';
-      preObj.value = 0;
+      preObj.privateBytes = 0;
+      preObj.workingSet = 0;
       preObj.children = [move2Child];
       parentObj = preObj;
       parentObj.children.push(newObj);

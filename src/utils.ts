@@ -23,6 +23,8 @@ export function formatBytes(bytes: number): string {
     str = `${bytes / MB} MB`
   } else if (bytes > kB) {
     str = `${bytes / kB} kB`
+  } else if (bytes === 'null') {
+    str = `???`
   } else {
     str = `${bytes} B`
   }
