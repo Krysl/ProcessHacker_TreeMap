@@ -13,6 +13,9 @@ export interface TreeNode {
   children: TreeNode[]
 }
 
+export type GetValue = (data: TreeNode) => number;
+export type SetValue = (data: TreeNode, val: number) => void;
+
 function getTreeStr(tree: TreeNode): string {
   let str = ''
   if (tree.depth >= 0) {
@@ -44,6 +47,8 @@ function parseCPU(cpuStr: string): number {
   let cpu = 0;
   if (cpuStr === 'null') {
     cpu = 'null';
+  } else if (cpuStr === '') {
+    cpu = 0;
   } else {
     cpu = parseFloat(cpuStr)
   }
@@ -57,7 +62,17 @@ export function parseCSV(csvData: string): TreeNode {
   console.log(csvInfo);
   alerted_set(false);
   // console.log(records);
-  let root: TreeNode = { name: '/', description: csvInfo, index: -1, depth: -1, children: [] };
+  let root: TreeNode = {
+    name: '/',
+    privateBytes: 0,
+    workingSet: 0,
+    cpu: 0,
+    description:
+      csvInfo,
+    index: -1,
+    depth: -1,
+    children: []
+  };
   let preDepth = -1;
   let parentObj: TreeNode = root;
   let preObj: TreeNode = root;
@@ -71,7 +86,7 @@ export function parseCSV(csvData: string): TreeNode {
     let pathStr = "";
     const priBytesStr = row['Private bytes'];
     const workingSetStr = row['Working set'] ?? 'null';
-    const cpuStr = row['CPU'] ?? 'null';
+    const cpuStr = row['CPU'] ?? 'null'
 
     const newObj: TreeNode = {
       name: name.replace(".exe", ''),
@@ -90,6 +105,7 @@ export function parseCSV(csvData: string): TreeNode {
         name: preObj.name,
         privateBytes: preObj.privateBytes,
         workingSet: preObj.workingSet,
+        cpu: preObj.cpu,
         description: preObj.description,
         commandLine: preObj.commandLine,
         index: preObj.index + 0.5,
@@ -127,5 +143,23 @@ export function parseCSV(csvData: string): TreeNode {
   console.log(root);
   // console.log(JSON.stringify(root, null, '\t'));
   // console.log(getTreeStr(root));
+  calculateSum(root, (d) => d.privateBytes, (d, v) => d.privateBytes = v);
+  calculateSum(root, (d) => d.workingSet, (d, v) => d.workingSet = v);
+  calculateSum(root, (d) => d.cpu, (d, v) => d.cpu = v);
   return root;
+}
+
+function calculateSum(data: TreeNode,
+  getValue: GetValue, setValue: SetValue): number {
+  let sum = 0;
+  // console.log("\t".repeat(Math.ceil(data.depth) + 1) + data.name)
+  if (data.children) {
+    sum = data.children.map(
+      (child) => calculateSum(child, getValue, setValue)
+    ).reduce((prev, curr) => prev + curr);
+  } else {
+    sum = getValue(data);
+  }
+  setValue(data, sum);
+  return sum;
 }

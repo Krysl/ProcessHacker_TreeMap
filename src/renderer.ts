@@ -3,7 +3,7 @@ import { cfgSortBySize } from './configs/sort-by-size';
 import { colorFn } from './configs/color-mode';
 import * as d3 from 'd3';
 import { formatBytes, uid } from './utils';
-import { getValue, dataSourcePrivatebytes, dataSourceWorkingset, dataSourceCPU } from './configs/data-src';
+import { getValue, dataSourcePrivatebytes, dataSourceWorkingset, dataSourceCPU, cfgDataSource } from './configs/data-src';
 
 let d3Node: d3.Selection<d3.BaseType | SVGGElement, unknown, d3.BaseType | SVGGElement, unknown>;
 
@@ -13,27 +13,31 @@ document.body.onresize = () => showTreeMap(null);
 
 const format = d3.format(",d");
 
-const treemap = (data: TreeNode) => d3.treemap()
-  // .tile(d3.treemapBinary)
-  // .tile(d3.treemapSquarify)
-  .size([width(), height()])
-  .paddingOuter(3)
-  .paddingTop(19)
-  .paddingInner(1)
-  .round(true)
-  (
-    cfgSortBySize ?
-      d3
-        .hierarchy(data)
-        .sum(d => getValue(d))
-        .sort((a, b) =>
-          // -(b.data.index - a.data.index)
-          getValue(b) - getValue(a)
-        ) :
-      d3
-        .hierarchy(data)
-        .sum(d => getValue(d))
-  )
+function treemap(data: TreeNode) {
+  let hierarchyData = d3
+    .hierarchy(data)
+    // .sum(d => getValue(d.data))
+    .eachAfter(d => {
+      d.value = getValue(d.data)
+      // console.log(`T${"\t".repeat(d.depth)}${d.data.name}: ${d.value}`)
+    });
+  if (cfgSortBySize) {
+    hierarchyData = hierarchyData.sort((a, b) =>
+      // -(b.data.index - a.data.index)
+      getValue(b.data) - getValue(a.data)
+    )
+  }
+  console.log(hierarchyData);
+  return d3.treemap()
+    // .tile(d3.treemapBinary)
+    // .tile(d3.treemapSquarify)
+    .size([width(), height()])
+    .paddingOuter(3)
+    .paddingTop(19)
+    .paddingInner(1)
+    .round(true)
+    (hierarchyData);
+}
 
 let preData: TreeNode;
 export function showTreeMap(data: TreeNode | null): SVGSVGElement {
@@ -111,8 +115,13 @@ export function showTreeMap(data: TreeNode | null): SVGSVGElement {
       // let info = (d.data.name as string).split(/[ .]/g);
       // if (d.height != 0)
       //   info = ['[', ...info, ']='];
+      if (cfgDataSource === dataSourcePrivatebytes || cfgDataSource === dataSourceWorkingset)
+        info = info
+          .concat(formatBytes(d.value))
+      if (cfgDataSource === dataSourceCPU)
+        info = info
+          .concat(d.value)
       info = info
-        .concat(formatBytes(d.value))
         .concat(d.data.description)
       // .concat(d.data.commandLine)}
       return info;

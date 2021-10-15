@@ -1,12 +1,10 @@
 import { showTreeMap } from '../renderer';
-import { TreeNode } from './../parse_csv';
+import { TreeNode, GetValue } from './../parse_csv';
 
 
 export const dataSourcePrivatebytes = 'Private bytes';
 export const dataSourceWorkingset = 'Working set';
 export const dataSourceCPU = 'CPU';
-
-type GetValue = (data: TreeNode) => number;
 
 const dataSrcMode: Map<string, GetValue> = new Map<string, GetValue>([
   [dataSourcePrivatebytes, (d: TreeNode) => d.privateBytes],
@@ -18,7 +16,7 @@ const alerted_get = () => _alerted;
 export const alerted_set = (v: boolean) => _alerted = v;
 
 const dataSourceSelect = document.getElementById('data-src');
-let cfgDataSource = localStorage.getItem('data-src');
+export let cfgDataSource = localStorage.getItem('data-src');
 if (cfgDataSource === null) {
   localStorage.setItem('data-src', dataSourcePrivatebytes);
   cfgDataSource = dataSourcePrivatebytes;
@@ -36,7 +34,7 @@ console.log(dataSourceSelect.value)
 
 dataSourceSelect.onchange = (ev) => {
   cfgDataSource = dataSourceSelect.value;
-  console.log(`=> ${cfgDataSource}`)
+  console.log(`=> Data Source: ${cfgDataSource}`)
   localStorage.setItem('data-src', dataSourceSelect.value);
   showTreeMap(null);
 }

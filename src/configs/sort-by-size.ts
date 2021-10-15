@@ -1,3 +1,4 @@
+import { showTreeMap } from '../renderer';
 
 const sortBySizeCheckBox = document.getElementById('sort-by-size');
 export let cfgSortBySize = localStorage.getItem('sort-by-size');
@@ -10,5 +11,6 @@ sortBySizeCheckBox.checked = cfgSortBySize;
 sortBySizeCheckBox.onchange = (ev) => {
   localStorage.setItem('sort-by-size', sortBySizeCheckBox.checked);
   cfgSortBySize = sortBySizeCheckBox.checked;
+  console.log(`=> Sort by Size: ${cfgSortBySize}`)
   showTreeMap(null);
 }
