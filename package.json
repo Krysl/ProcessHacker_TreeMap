@@ -6,12 +6,12 @@
     "start": "vite serve"
   },
   "dependencies": {
-    "@types/d3": "^7.0.0",
+    "@types/d3": "^7.4.3",
     "d3-dsv": "3.0.1",
-    "d3": "^7.1.1"
+    "d3": "^7.9.0"
   },
   "devDependencies": {
-    "typescript": "^4.4.4",
-    "vite": "^2.6.7"
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
   }
 }
