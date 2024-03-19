@@ -1,4 +1,4 @@
-import { csvParse } from 'd3-dsv';
+import { DSVParsedArray, DSVRowArray, DSVRowString, csvParse,tsvParse } from 'd3-dsv';
 import { alerted_set } from './configs/data-src';
 
 export interface TreeNode {
@@ -30,9 +30,12 @@ function getTreeStr(tree: TreeNode): string {
   return str;
 }
 
-function parseMemorySize(memSizeStr: string): number {
-  let memSize = 0;
-  if (memSizeStr.includes('kB')) {
+function parseMemorySize(memSizeStr: string): number|string {
+  let memSize : number|string = 0;
+  if (! IsProcHacker)
+    memSizeStr = memSizeStr.replace(",","");
+
+  if (memSizeStr.includes('kB') || ! IsProcHacker) {
     memSize = parseFloat(memSizeStr) * 1000;
   } else if (memSizeStr.includes('MB')) {
     memSize = parseFloat(memSizeStr) * 1000 * 1000;
@@ -45,6 +48,8 @@ function parseMemorySize(memSizeStr: string): number {
 }
 function parseCPU(cpuStr: string): number {
   let cpu = 0;
+  if (! IsProcHacker)
+    cpuStr = cpuStr.replace("< ","").replace("Suspended","");
   if (cpuStr === 'null') {
     cpu = 'null';
   } else if (cpuStr === '') {
@@ -54,11 +59,30 @@ function parseCPU(cpuStr: string): number {
   }
   return cpu;
 }
+const columnMapping: Map<string, string> = new Map();
+let IsProcHacker = true;
+function Col(row : DSVRowString<string>, col : string) : string {
+  return row[columnMapping.get(col)];
+}
 
 export function parseCSV(csvData: string): TreeNode {
-  const csvStart = csvData.indexOf('"');
-  const records = csvParse(csvData.slice(csvStart));
-  const csvInfo = csvData.slice(0, csvStart - 2);
+  csvData = csvData.trim();
+  IsProcHacker = csvData.startsWith("System Informer") || csvData.startsWith("Process Hacker");
+  let records : DSVRowArray<string>;
+  let csvInfo : string;
+  const procHackerCols =    ["Name",    'Private bytes',  'Working set',  'CPU',  'Command line', 'Description'];
+  const procExplorerCols =  ["Process", "Private Bytes",  "Working Set",  "CPU",  "Command Line", "Description"];
+  for (let i = 0; i < procHackerCols.length;i++)
+    columnMapping.set(procHackerCols[i],IsProcHacker ?  procHackerCols[i] : procExplorerCols[i]);
+
+  if (IsProcHacker){
+    const csvStart = csvData.indexOf('"');
+    records = csvParse(csvData.slice(csvStart));
+    csvInfo = csvData.slice(0, csvStart - 2);
+  }else {
+    csvInfo="From process Explorer";
+    records = tsvParse(csvData);
+  }
   console.log(csvInfo);
   alerted_set(false);
   // console.log(records);
@@ -79,22 +103,24 @@ export function parseCSV(csvData: string): TreeNode {
   let path: TreeNode[] = [];
   for (let index = 0; index < records.length; index++) {
     const row = records[index];
-    let name = row.Name;
+    let name = Col(row, "Name");
+    if (name == "System Idle Process")
+      continue;
     const oldlen = name.length;
     name = name.trim();
-    const depth = (oldlen - name.length) / 2;
+    const depth = (oldlen - name.length)/(IsProcHacker ? 2 : 1);
     let pathStr = "";
-    const priBytesStr = row['Private bytes'];
-    const workingSetStr = row['Working set'] ?? 'null';
-    const cpuStr = row['CPU'] ?? 'null'
+    const priBytesStr = Col(row, "Private bytes");
+    const workingSetStr = Col(row, "Working set") ?? 'null';
+    const cpuStr = Col(row, "CPU") ?? 'null'
 
     const newObj: TreeNode = {
       name: name.replace(".exe", ''),
       privateBytes: parseMemorySize(priBytesStr),
       workingSet: parseMemorySize(workingSetStr),
       cpu: parseCPU(cpuStr),
-      description: row.Description,
-      commandLine: row['Command line'],
+      description: Col(row, "Description"),
+      commandLine: Col(row, "Command line"),
       index: index,
       depth: depth,
       children: null
