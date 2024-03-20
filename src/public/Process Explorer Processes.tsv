@@ -1,0 +1,291 @@
+﻿Process	CPU	Private Bytes	Working Set	PID	Description	Company Name
+Secure System	Suspended	184 K	39,288 K	72		
+Registry		40,664 K	147,388 K	132		
+System Idle Process	39.48	60 K	8 K	0		
+System	0.40	216 K	7,244 K	4		
+ Interrupts	0.55	0 K	0 K	n/a	Hardware Interrupts and DPCs	
+ smss.exe		1,120 K	1,164 K	524		
+ Memory Compression	< 0.01	1,664 K	443,324 K	3200		
+csrss.exe	< 0.01	2,416 K	4,924 K	776		
+wininit.exe		1,752 K	5,288 K	880		
+ services.exe	< 0.01	8,696 K	15,132 K	952		
+  svchost.exe	< 0.01	16,068 K	31,864 K	756	Windows 服务主进程	Microsoft Corporation
+   WmiPrvSE.exe		16,288 K	30,368 K	4624		
+   StartMenuExperienceHost.exe		61,556 K	119,736 K	8040		
+   RuntimeBroker.exe	< 0.01	9,008 K	33,312 K	2588	Runtime Broker	Microsoft Corporation
+   RuntimeBroker.exe		9,632 K	35,872 K	8280	Runtime Broker	Microsoft Corporation
+   LockApp.exe	Suspended	20,688 K	52,716 K	5216	LockApp.exe	Microsoft Corporation
+   RuntimeBroker.exe		9,496 K	34,644 K	9292	Runtime Broker	Microsoft Corporation
+   TextInputHost.exe	0.08	20,808 K	53,040 K	12964		Microsoft Corporation
+   WmiPrvSE.exe		8,000 K	17,260 K	13076		
+   ShellExperienceHost.exe	Suspended	36,776 K	66,088 K	14784	Windows Shell Experience Host	Microsoft Corporation
+   RuntimeBroker.exe		6,688 K	30,232 K	15160	Runtime Broker	Microsoft Corporation
+   SearchApp.exe	Suspended	160,148 K	112,704 K	5888	Search application	Microsoft Corporation
+   ApplicationFrameHost.exe		6,056 K	23,972 K	4144	Application Frame Host	Microsoft Corporation
+   secd.exe		4,204 K	15,868 K	16916	Apple Security Manager	Apple, Inc.
+   ApplePhotoStreams.exe		7,900 K	30,192 K	16992	iCloud Photo Stream	Apple Inc.
+   APSDaemon.exe		8,420 K	20,844 K	17072	Apple Push	Apple Inc.
+   RuntimeBroker.exe		2,480 K	10,680 K	13808	Runtime Broker	Microsoft Corporation
+   RuntimeBroker.exe	< 0.01	6,276 K	23,816 K	7024	Runtime Broker	Microsoft Corporation
+   CompPkgSrv.exe		1,652 K	9,100 K	14872	Component Package Support Server	Microsoft Corporation
+   dllhost.exe		3,912 K	13,172 K	20004	COM Surrogate	Microsoft Corporation
+   dllhost.exe		5,044 K	17,840 K	8164	COM Surrogate	Microsoft Corporation
+   smartscreen.exe		8,460 K	24,204 K	12556	Windows Defender SmartScreen	Microsoft Corporation
+  svchost.exe	0.16	12,112 K	18,292 K	1132	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	3,720 K	10,652 K	1184	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	4,496 K	11,156 K	1364	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,356 K	4,036 K	1436	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,216 K	11,732 K	1460	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,168 K	7,812 K	1480	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,412 K	11,432 K	1496	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,404 K	11,728 K	1580	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		18,848 K	18,848 K	1740	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		7,916 K	16,088 K	1760	Windows 服务主进程	Microsoft Corporation
+   helperservice.exe		1,676 K	2,216 K	2592		
+    conhost.exe	< 0.01	6,804 K	2,516 K	3268		
+   taskhostw.exe	< 0.01	8,500 K	20,036 K	5344	Windows 任务的主机进程	Microsoft Corporation
+   PowerToys.exe		11,376 K	27,288 K	4220		
+    PowerToys.AlwaysOnTop.exe	0.08	19,384 K	4,320 K	14408		
+    PowerToys.ColorPickerUI.exe		77,688 K	68,500 K	14440		
+    PowerToys.CropAndLock.exe		19,472 K	2,956 K	14468		
+    PowerToys.FancyZones.exe	< 0.01	76,468 K	7,676 K	14512		
+    PowerToys.KeyboardManagerEngine.exe		17,264 K	2,964 K	14560		
+   taskhostw.exe		6,032 K	21,560 K	13668	Windows 任务的主机进程	Microsoft Corporation
+   taskhostw.exe		3,172 K	10,824 K	2352		
+   MicrosoftEdgeUpdate.exe		2,168 K	2,044 K	20432		
+  svchost.exe		3,504 K	13,388 K	1848	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,860 K	5,508 K	1912	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,136 K	6,820 K	1928	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,036 K	9,676 K	1152	Windows 服务主进程	Microsoft Corporation
+   sihost.exe		8,984 K	30,816 K	5820	Shell Infrastructure Host	Microsoft Corporation
+  svchost.exe		2,000 K	7,652 K	1724	Windows 服务主进程	Microsoft Corporation
+   ctfmon.exe	0.16	8,864 K	28,984 K	2444		
+   TabTip.exe	< 0.01	4,396 K	17,768 K	7668		
+  svchost.exe		2,552 K	9,536 K	2112	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,136 K	7,100 K	2120	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	1,704 K	4,664 K	2244	Windows 服务主进程	Microsoft Corporation
+  igfxCUIService.exe		2,156 K	8,692 K	2296	igfxCUIService Module	Intel Corporation
+  svchost.exe	< 0.01	7,588 K	10,332 K	2376	Windows 服务主进程	Microsoft Corporation
+  WUDFHost.exe		2,004 K	6,688 K	2480		
+  svchost.exe		2,760 K	10,592 K	2672	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,804 K	6,544 K	2680	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,676 K	5,584 K	2752	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,224 K	8,324 K	2888	Windows 服务主进程	Microsoft Corporation
+  ekrn.exe	1.82	131,088 K	327,264 K	2900	ESET Service	ESET
+   eguiProxy.exe	< 0.01	6,072 K	16,604 K	10168	ESET Proxy GUI	ESET
+  svchost.exe		2,160 K	7,196 K	2956	Windows 服务主进程	Microsoft Corporation
+   dasHost.exe		1,212 K	3,828 K	3352		
+  svchost.exe		2,156 K	6,844 K	2984	Windows 服务主进程	Microsoft Corporation
+  WUDFHost.exe		2,180 K	7,324 K	3004		
+  svchost.exe		2,416 K	8,088 K	2344	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	0.16	5,496 K	15,084 K	1696	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,188 K	13,196 K	3108	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,408 K	4,400 K	3116	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,128 K	8,760 K	3168	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	4,720 K	15,260 K	3480	Windows 服务主进程	Microsoft Corporation
+   audiodg.exe		10,056 K	16,048 K	5628		
+  svchost.exe	< 0.01	3,328 K	8,680 K	3488	Windows 服务主进程	Microsoft Corporation
+  GroupySrv.exe		1,192 K	1,188 K	3660	Stardock Groupy Service	Stardock Software, Inc
+  svchost.exe	< 0.01	14,436 K	22,632 K	3668	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,304 K	4,168 K	3776	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	4,960 K	9,684 K	3852	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	7,908 K	19,484 K	3860	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,064 K	6,328 K	3944	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,952 K	10,904 K	3952	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,604 K	9,264 K	4004	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	12,216 K	19,448 K	4084	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		6,012 K	15,848 K	3516	Windows 服务主进程	Microsoft Corporation
+   wlanext.exe		1,564 K	6,080 K	4456		
+    conhost.exe		6,296 K	4,420 K	4464		
+  svchost.exe	< 0.01	11,944 K	20,720 K	4192	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,348 K	11,708 K	4244	Windows 服务主进程	Microsoft Corporation
+  spoolsv.exe		6,200 K	14,048 K	4308	后台处理程序子系统应用	Microsoft Corporation
+  Listary.Service.exe		24,844 K	34,248 K	4408	Listary.Service	
+   ListaryHookHost32.exe	0.08	1,376 K	6,884 K	15300		
+   ListaryHookHost64.exe	< 0.01	1,388 K	6,220 K	6192		
+  svchost.exe		5,580 K	14,252 K	4872	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,704 K	8,120 K	4932	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,184 K	6,572 K	4472	Windows 服务主进程	Microsoft Corporation
+  efwd.exe	< 0.01	2,792 K	6,520 K	5132	ESET Forwarder	ESET
+  svchost.exe		3,620 K	15,376 K	5864	Windows 服务主进程	Microsoft Corporation
+  PresentationFontCache.exe		26,272 K	19,668 K	5912	PresentationFontCache.exe	Microsoft Corporation
+  svchost.exe		11,344 K	47,204 K	5980	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		5,072 K	23,836 K	6084	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		3,092 K	8,404 K	6964	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,832 K	12,748 K	7104	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,436 K	8,896 K	6888	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	8,020 K	32,980 K	7264	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,024 K	8,408 K	7312	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,440 K	10,088 K	7424	Windows 服务主进程	Microsoft Corporation
+  SearchIndexer.exe	0.08	34,132 K	44,196 K	7756	Microsoft Windows Search 索引器	Microsoft Corporation
+  svchost.exe		1,808 K	7,472 K	9680	Windows 服务主进程	Microsoft Corporation
+  mDNSResponder.exe		2,540 K	7,716 K	9704	Bonjour Service	Apple Inc.
+  DeveloperToolsSvc.exe		1,444 K	6,784 K	9724	开发人员工具服务	Microsoft Corporation
+  svchost.exe	0.08	16,708 K	25,548 K	9752	Windows 服务主进程	Microsoft Corporation
+  Everything.exe	< 0.01	2,048 K	7,436 K	9760	Everything	voidtools
+  svchost.exe	< 0.01	38,712 K	65,788 K	9772	Windows 服务主进程	Microsoft Corporation
+   AggregatorHost.exe		1,252 K	4,984 K	12392		
+  svchost.exe		2,712 K	9,808 K	9932	Windows 服务主进程	Microsoft Corporation
+  OneApp.IGCC.WinService.exe	< 0.01	29,840 K	28,732 K	9960	Intel® Graphics Command Center Service	Intel Corporation
+  IPROSetMonitor.exe	< 0.01	2,556 K	10,036 K	9992	Intel® PROSet Monitoring Service	Intel Corporation
+  gamingservicesnet.exe		1,184 K	5,392 K	10000	GamingServices	Microsoft Corporation
+  gamingservices.exe	< 0.01	10,512 K	32,480 K	10008	GamingServices	Microsoft Corporation
+  svchost.exe		8,396 K	32,524 K	10020	Windows 服务主进程	Microsoft Corporation
+  IpOverUsbSvc.exe		8,604 K	14,100 K	10036	Windows IP Over USB PC Service	Microsoft Corporation
+  jhi_service.exe		1,584 K	7,108 K	10052	Intel(R) Dynamic Application Loader Host Interface	Intel Corporation
+  svchost.exe		4,600 K	20,892 K	10060	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,560 K	6,920 K	10136	Windows 服务主进程	Microsoft Corporation
+  MSPCManagerService.exe	< 0.01	58,196 K	68,452 K	10156		
+  SocketHeciServer.exe	< 0.01	1,624 K	7,872 K	10224	Intel(R) Capability Licensing Service TCP IP Interface	Intel(R) Corporation
+  logioptionsplus_updater.exe	< 0.01	18,164 K	29,288 K	10232	Logi Options+ Updater	Logitech, Inc.
+  svchost.exe		2,496 K	7,488 K	9232	Windows 服务主进程	Microsoft Corporation
+  pdf24.exe	< 0.01	1,916 K	8,264 K	10244	PDF24 Backend	geek software GmbH
+  RtkAudUService64.exe		3,104 K	10,592 K	10252	Realtek HD Audio Universal Service	Realtek Semiconductor
+  svchost.exe		1,576 K	6,600 K	10312	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,156 K	8,788 K	10320	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,776 K	6,444 K	10352	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,128 K	6,496 K	10408	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		5,444 K	22,696 K	10420	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,820 K	6,612 K	10644	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,736 K	6,236 K	10696	Windows 服务主进程	Microsoft Corporation
+  RstMwService.exe		1,652 K	7,272 K	10752	Intel(R) Rapid Storage Technology Management Service	Intel Corporation
+  MsMpEng.exe		248,096 K	177,680 K	10900	Antimalware Service Executable	Microsoft Corporation
+  svchost.exe	< 0.01	4,116 K	13,880 K	11192	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	3,136 K	8,436 K	12204	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	2,828 K	8,492 K	1316	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		5,628 K	10,580 K	13264	Windows 服务主进程	Microsoft Corporation
+   CompatTelRunner.exe	6.98	68,928 K	32,448 K	19416		
+    conhost.exe	< 0.01	6,812 K	14,588 K	12388		
+  svchost.exe		5,968 K	13,480 K	13764	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		5,424 K	11,808 K	13912	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	3,760 K	10,988 K	14076	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,708 K	7,328 K	14184	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,552 K	6,808 K	14264	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		6,896 K	24,824 K	13860	Windows 服务主进程	Microsoft Corporation
+  SecurityHealthService.exe		5,324 K	17,964 K	14588	Windows Security Health Service	Microsoft Corporation
+  svchost.exe		3,756 K	12,336 K	9172	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,904 K	11,708 K	16704	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,884 K	11,232 K	18388	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		6,028 K	21,700 K	1452	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		4,644 K	17,128 K	6712	Windows 服务主进程	Microsoft Corporation
+  IAStorDataMgrSvc.exe		89,124 K	72,256 K	2548	IAStorDataSvc	Intel Corporation
+  SgrmBroker.exe		8,328 K	9,040 K	17784	System Guard 运行时监视代理服务	Microsoft Corporation
+  WTabletServicePro.exe		2,044 K	9,308 K	2364	Tablet Service	Wacom Co. Ltd.
+   Wacom_TabletUser.exe		2,068 K	9,612 K	15356	Tablet user module for professional driver	Wacom Co. Ltd.
+   Wacom_UpdateUtil.exe		3,060 K	13,404 K	1936		
+   WacomHost.exe		2,428 K	13,848 K	7152		
+    Wacom_Tablet.exe	< 0.01	15,600 K	47,500 K	14424		
+   Wacom_TouchUser.exe	< 0.01	5,120 K	14,036 K	5972		
+  svchost.exe		1,992 K	9,740 K	7384	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,668 K	7,252 K	15968	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		2,876 K	13,020 K	14436	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		6,568 K	10,180 K	9556	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		15,636 K	28,100 K	1276	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	11,356 K	24,452 K	13156	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		43,180 K	65,168 K	7892	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,876 K	8,432 K	440	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,548 K	6,320 K	17624	Windows 服务主进程	Microsoft Corporation
+  svchost.exe		1,928 K	7,828 K	1664	Windows 服务主进程	Microsoft Corporation
+  svchost.exe	< 0.01	4,336 K	16,612 K	19312	Windows 服务主进程	Microsoft Corporation
+ LsaIso.exe		896 K	2,532 K	972		
+ lsass.exe	0.08	17,604 K	32,156 K	980	Local Security Authority Process	Microsoft Corporation
+ fontdrvhost.exe		2,324 K	2,728 K	744		
+csrss.exe	< 0.01	5,016 K	7,940 K	888		
+winlogon.exe		2,960 K	12,576 K	1032		
+ fontdrvhost.exe	< 0.01	15,500 K	14,624 K	1084		
+ dwm.exe	0.79	246,152 K	196,324 K	1256		
+GroupyHelp64.exe		1,264 K	2,548 K	5572		
+GroupyHelp32.exe		1,452 K	2,740 K	5692		
+GroupyCtrl.exe	0.24	21,268 K	38,004 K	5720		
+rundll32.exe	< 0.01	4,212 K	2,084 K	6316		
+rundll32.exe		4,240 K	2,164 K	6328	Windows 主进程 (Rundll32)	Microsoft Corporation
+explorer.exe	28.06	174,448 K	251,892 K	6676	Windows 资源管理器	Microsoft Corporation
+ TSVNCache.exe	0.08	20,616 K	14,112 K	7992	TortoiseSVN status cache	https://tortoisesvn.net
+ RtkAudUService64.exe		2,732 K	9,840 K	9224	Realtek HD Audio Universal Service	Realtek Semiconductor
+ Everything.exe	< 0.01	224,836 K	62,956 K	10396	Everything	voidtools
+ MSPCManager.exe	< 0.01	99,504 K	124,360 K	1400	MSPCManager	MSPCManager
+  msedgewebview2.exe	< 0.01	41,964 K	95,352 K	14676	Microsoft Edge WebView2	Microsoft Corporation
+   msedgewebview2.exe		2,648 K	9,140 K	14716	Microsoft Edge WebView2	Microsoft Corporation
+   msedgewebview2.exe		27,684 K	40,084 K	14948	Microsoft Edge WebView2	Microsoft Corporation
+   msedgewebview2.exe		10,004 K	29,092 K	6940	Microsoft Edge WebView2	Microsoft Corporation
+   msedgewebview2.exe		6,912 K	17,504 K	3876	Microsoft Edge WebView2	Microsoft Corporation
+   msedgewebview2.exe		41,604 K	51,800 K	14488	Microsoft Edge WebView2	Microsoft Corporation
+ flux.exe	0.16	14,632 K	27,840 K	8152	f.lux	f.lux Software LLC
+ 7+ Taskbar Tweaker.exe		3,284 K	14,408 K	12912	7+ Taskbar Tweaker	Ramen Software
+ Listary.exe	0.24	489,404 K	503,996 K	14256	Listary	
+  SystemInformer.exe	0.48	130,596 K	100,444 K	18672	System Informer	System Informer
+ PowerToys.Peek.UI.exe		29,924 K	72,000 K	14700	PowerToys.Peek.UI	Microsoft Corporation
+ CommandTrayHost.exe		4,724 K	17,228 K	7852	CommandTrayHost(taskbar)	rexdf@vip.qq.com
+  AutoHotkey64.exe		5,224 K	14,432 K	7692	AutoHotkey 64-bit	AutoHotkey Foundation LLC
+ wincycle.exe		1,432 K	6,616 K	15428	Easy Window Switcher	NeoSmart Technologies
+ v2rayN.exe	< 0.01	167,232 K	200,228 K	15764	v2rayN	v2rayN
+  xray.exe	< 0.01	48,352 K	43,672 K	17508		
+   conhost.exe		6,416 K	6,920 K	17480	控制台窗口主机	Microsoft Corporation
+ BingWallpaperApp.exe		44,020 K	72,552 K	15280	Bing Wallpaper	Microsoft Corporation
+ iCloudHome.exe	< 0.01	65,084 K	115,556 K	9860	iCloudHome	Apple Inc.
+  iCloudCKKS.exe	< 0.01	11,596 K	30,712 K	16856	iCloud Keychain Sync	Apple Inc
+ iCloudDrive.exe		32,084 K	58,192 K	17344	iCloud Drive	Apple Inc.
+ aw-qt.exe	< 0.01	27,060 K	25,756 K	17984		
+  aw-server-rust.exe	3.33	6,188 K	19,784 K	17716		
+   conhost.exe		7,008 K	9,304 K	15368	控制台窗口主机	Microsoft Corporation
+  aw-watcher-afk.exe	< 0.01	25,332 K	21,960 K	17248		
+   conhost.exe		7,000 K	9,388 K	2780	控制台窗口主机	Microsoft Corporation
+  aw-watcher-window.exe	0.16	26,080 K	23,232 K	2696		
+   conhost.exe		7,040 K	9,408 K	18056	控制台窗口主机	Microsoft Corporation
+ procrastitracker.exe	0.08	11,236 K	20,764 K	2912		
+ QuickLook.exe		64,440 K	49,432 K	3636	QuickLook	pooi.moe
+  QuickLook.WoW64HookHelper.exe		1,336 K	6,432 K	4024		
+ WGestures.exe	0.08	73,272 K	160,880 K	17928		
+ chrome.exe	0.16	380,596 K	628,776 K	6932	Google Chrome	Google LLC
+  chrome.exe		6,988 K	10,044 K	13100	Google Chrome	Google LLC
+  chrome.exe	0.40	496,036 K	415,900 K	13172	Google Chrome	Google LLC
+  chrome.exe	< 0.01	26,528 K	44,172 K	9692	Google Chrome	Google LLC
+  chrome.exe		20,020 K	24,256 K	9828	Google Chrome	Google LLC
+  chrome.exe		82,600 K	117,648 K	5400	Google Chrome	Google LLC
+  chrome.exe		26,328 K	42,136 K	15452	Google Chrome	Google LLC
+  chrome.exe		194,512 K	199,960 K	16604	Google Chrome	Google LLC
+  chrome.exe		76,484 K	90,108 K	9328	Google Chrome	Google LLC
+  chrome.exe		141,168 K	118,184 K	16272	Google Chrome	Google LLC
+  chrome.exe		45,076 K	84,992 K	15456	Google Chrome	Google LLC
+  chrome.exe		33,896 K	56,812 K	16616	Google Chrome	Google LLC
+  chrome.exe	< 0.01	210,512 K	244,284 K	15240	Google Chrome	Google LLC
+  chrome.exe		38,160 K	64,736 K	16584	Google Chrome	Google LLC
+  chrome.exe		33,032 K	53,020 K	16648	Google Chrome	Google LLC
+  chrome.exe		32,620 K	46,364 K	16660	Google Chrome	Google LLC
+  chrome.exe		50,404 K	64,592 K	13708	Google Chrome	Google LLC
+  chrome.exe	< 0.01	53,780 K	87,908 K	16392	Google Chrome	Google LLC
+  chrome.exe		35,000 K	56,188 K	16548	Google Chrome	Google LLC
+  chrome.exe		26,048 K	44,520 K	8016	Google Chrome	Google LLC
+  chrome.exe		17,056 K	24,304 K	18232	Google Chrome	Google LLC
+  QQPYUserCenter.exe	0.63	15,932 K	24,360 K	16716	QQ拼音个人中心	Sogou
+  chrome.exe		30,236 K	47,928 K	9988	Google Chrome	Google LLC
+  chrome.exe	< 0.01	35,068 K	64,712 K	17976	Google Chrome	Google LLC
+  chrome.exe		75,420 K	131,992 K	4716	Google Chrome	Google LLC
+  chrome.exe		63,884 K	113,144 K	8740	Google Chrome	Google LLC
+  chrome.exe	< 0.01	140,216 K	192,724 K	5036	Google Chrome	Google LLC
+  chrome.exe		114,712 K	178,868 K	17688	Google Chrome	Google LLC
+  chrome.exe	< 0.01	138,880 K	178,572 K	20072	Google Chrome	Google LLC
+  chrome.exe		91,836 K	148,808 K	4036	Google Chrome	Google LLC
+  chrome.exe	< 0.01	130,068 K	150,896 K	3620	Google Chrome	Google LLC
+  chrome.exe		111,504 K	169,304 K	4392	Google Chrome	Google LLC
+  chrome.exe		54,672 K	94,488 K	18932	Google Chrome	Google LLC
+  chrome.exe	0.24	134,404 K	197,836 K	18476	Google Chrome	Google LLC
+  chrome.exe	< 0.01	26,152 K	32,992 K	20696	Google Chrome	Google LLC
+ TGitCache.exe	0.16	32,444 K	46,108 K	5504	TortoiseGit status cache	https://tortoisegit.org/
+ procexp64.exe	13.48	75,060 K	110,412 K	10360	Sysinternals Process Explorer	Sysinternals - www.sysinternals.com
+CCleaner64.exe	< 0.01	43,136 K	46,072 K	14380		
+AutoHotkey64.exe		5,312 K	12,812 K	16080		
+AutoHotkey.exe	< 0.01	18,452 K	31,196 K	16040		
+AppleMobileDeviceProcess.exe	< 0.01	3,548 K	13,512 K	17668	MobileDeviceProcess	Apple Inc.
+WeaselServer.exe		9,372 K	24,160 K	17448	小狼毫算法服務	式恕堂
+GAOMONTablet.exe	0.16	13,468 K	30,712 K	1576	GaomonTablet	广州高漫电子科技有限公司
+ TabletServer.exe	0.16	4,884 K	19,268 K	17756	TabletServer	
+ TabletDriver.exe	< 0.01	6,576 K	12,024 K	4580	TabletDriver	
+IAStorIcon.exe		41,524 K	37,744 K	9644	IAStorIcon	Intel Corporation
+logioptionsplus_appbroker.exe	0.16	3,328 K	8,584 K	12896		
+logioptionsplus_agent.exe	0.16	78,308 K	103,420 K	18216	Logi Options+ Agent	Logitech, Inc.
+Microsoft.SharePoint.exe		17,152 K	40,096 K	868	Microsoft SharePoint	Microsoft Corporation
+
+Process: Secure System Pid: 72
+
+Type	Name

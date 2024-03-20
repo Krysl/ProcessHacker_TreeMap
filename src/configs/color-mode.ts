@@ -1,66 +1,66 @@
 import * as d3 from 'd3';
 import * as d3scalechromatic from 'd3-scale-chromatic';
+
+import { TreeNode } from '../parse-csv';
 import { showTreeMap } from '../renderer';
 
-const colorMap: Map<string, string> = new Map<string,string>;
+const colorMap = new Map<string, number>();
 
-const ramdomByNameColor = (d: d3.HierarchyNode) => {
+export function isIdle(name: string) {
+  return /^System Idle Process(\+...)?$/.test(name);
+}
+
+const ramdomByNameColor = (d: d3.HierarchyNode<TreeNode>) => {
   if (d.parent === null) {
-    d.color = "#888888";
-    return d.color
+    d.data.color = '#888888';
+    return d.data.color;
   }
   const name = d.data.name.replace('+...', '');
-  let c: string;
+  let c: number;
   if (colorMap.has(name)) {
-    c = colorMap.get(name);
+    c = colorMap.get(name) ?? 0;
   } else {
     c = Math.random() * 360;
     colorMap.set(name, c);
   }
-  return d3.hsl(
-    c,
-    0.65,
-    0.5 + 0.05 * d.depth
-  ).toString()
-}
+  return d3.hsl(c, 0.65, 0.5 + 0.05 * d.depth).toString();
+};
 
 // const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-const randomByNameStr = 'random by name';
-const colorMode: Map<string, Functon> = new Map<string, Functon>([
-  [randomByNameStr, ramdomByNameColor],
-])
+const randomByNameString = 'random by name';
+const colorMode = new Map<string, typeof ramdomByNameColor>([[randomByNameString, ramdomByNameColor]]);
 
-for (const prop in d3scalechromatic) {
-  if (prop.startsWith('interpolate')) {
+for (const property in d3scalechromatic) {
+  if (property.startsWith('interpolate')) {
     // console.log(prop)
-    const fn = d3scalechromatic[prop]
+    const function_ = d3scalechromatic[property] as typeof d3scalechromatic.interpolateBrBG;
     // console.log(fn)
-    colorMode.set(prop, d => d3.scaleSequential([8, 0], fn)(d.height))
-    colorMode.set(prop + '2', d => d3.scaleSequential([8, 0], fn)(d.depth))
+    colorMode.set(property, (d) => d3.scaleSequential([8, 0], function_)(d.height));
+    colorMode.set(property + '2', (d) => d3.scaleSequential([8, 0], function_)(d.depth));
   }
 }
 
-const colorModeSelect = document.getElementById('color-mode');
+const colorModeSelect = document.querySelector('#color-mode') as HTMLSelectElement;
 let cfgColorMode = localStorage.getItem('color-mode');
 if (cfgColorMode === null) {
-  localStorage.setItem('color-mode', randomByNameStr);
-  cfgColorMode = randomByNameStr;
+  localStorage.setItem('color-mode', randomByNameString);
+  cfgColorMode = randomByNameString;
 }
-for (let [key, value] of colorMode) {
-  var opt = document.createElement('option');
+for (const [key, _value] of colorMode) {
+  const opt = document.createElement('option');
   opt.value = key;
   opt.innerHTML = key;
-  if (key == cfgColorMode) {
+  if (key === cfgColorMode) {
     opt.selected = true;
   }
-  colorModeSelect.appendChild(opt);
+  colorModeSelect.append(opt);
 }
-export let colorFn = colorMode.get(colorModeSelect.value);
-console.log(colorModeSelect.value)
+export let colorFunction = colorMode.get(colorModeSelect.value) ?? ramdomByNameColor;
+console.log(colorModeSelect.value);
 
-colorModeSelect.onchange = (ev) => {
-  colorFn = colorMode.get(colorModeSelect.value);
+colorModeSelect.addEventListener('change', (_event) => {
+  colorFunction = colorMode.get(colorModeSelect.value) ?? ramdomByNameColor;
   localStorage.setItem('color-mode', colorModeSelect.value);
-  showTreeMap(null);
-}
+  showTreeMap();
+});
