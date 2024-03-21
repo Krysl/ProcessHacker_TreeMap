@@ -1,32 +1,35 @@
-
 let count = 0;
 
-export function uid(name) {
-  return new Id("O-" + (name == null ? "" : name + "-") + ++count);
+export function uid(name?: string) {
+  return new Id('O-' + (name ?? '' + '-') + ++count);
 }
-function Id(id) {
-  this.id = id;
-  this.href = new URL(`#${id}`, location) + "";
-}
+export class Id {
+  id: string;
+  href: string;
+  constructor(id?: string) {
+    this.id = id ?? '';
+    this.href = new URL(`#${id}`, location.toString()).toString();
+  }
 
-Id.prototype.toString = function () {
-  return "url(" + this.href + ")";
-};
-export function formatBytes(bytes: number): string {
-  let str: string = '';
+  toString() {
+    return 'url(' + this.href + ')';
+  }
+}
+export function formatBytes(bytes?: number): string {
+  let size: string = '';
   const GB = 1000 * 1000 * 1000;
   const MB = 1000 * 1000;
   const kB = 1000;
-  if (bytes > GB) {
-    str = `${bytes / GB} GB`
+  if (bytes === undefined || Number.isNaN(bytes)) {
+    size = `???`;
+  } else if (bytes > GB) {
+    size = `${bytes / GB} GB`;
   } else if (bytes > MB) {
-    str = `${bytes / MB} MB`
+    size = `${bytes / MB} MB`;
   } else if (bytes > kB) {
-    str = `${bytes / kB} kB`
-  } else if (bytes === 'null') {
-    str = `???`
+    size = `${bytes / kB} kB`;
   } else {
-    str = `${bytes} B`
+    size = `${bytes} B`;
   }
-  return str;//.match(/^\d+(?:\.\d{0,2})?/);
+  return size; //.match(/^\d+(?:\.\d{0,2})?/);
 }
