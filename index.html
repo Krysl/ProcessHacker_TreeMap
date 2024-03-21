@@ -1,13 +1,48 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script type="module" crossorigin src="./assets/index.d0396a00.js"></script>
-  <link rel="modulepreload" href="./assets/vendor.a4355230.js">
-  <link rel="stylesheet" href="./assets/index.3cf7b722.css">
+  <script type="module" crossorigin src="./assets/index-DQCpNbNo.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CAuc1G5a.css">
 </head>
+<style>
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    /* If you want dots under the hoverable text */
+    line-height: 1em;
+  }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .tooltip .tooltiptext {
+    width: max-content;
+    top: 100%;
+    left: 50%;
+    margin-left: -100%;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+</style>
 
 <body>
   <div id="titlebar" style="display: flex;">
@@ -28,14 +63,18 @@
       &nbsp;&nbsp;&nbsp;
       <input id="sort-by-size" type="checkbox">
       Sort by Size
+      <input id="hide-idle" type="checkbox">
+      <div class="tooltip">Hide idle
+        <span class="tooltiptext">Hide "System Idle Process"</span>
+      </div>
+
     </form>
     <div id="github_button" style="margin-left: auto; height: 23px;">
       <a class="github-button" href="https://github.com/krysl/ProcessHacker_TreeMap" data-size="large"
         data-show-count="true" aria-label="Star krysl/ProcessHacker_TreeMap on GitHub">Star</a>
     </div>
   </div>
-  <div id="d3-output"></div>
-  
+  <div id="d3-output"></div>
 
 </body>
 
