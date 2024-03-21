@@ -14,6 +14,11 @@ const config = defineConfig((env) => {
       // },
       outDir: "../dist"
     },
+    esbuild: {
+      supported: {
+        'top-level-await': true
+      },
+    },
   });
   let customConfig: UserConfig;
   if (env.command === "serve") {
