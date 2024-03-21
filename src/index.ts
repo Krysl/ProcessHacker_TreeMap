@@ -1,23 +1,27 @@
-import { parseCSV } from './parse_csv';
-import { showTreeMap, updateData } from './renderer';
+import { parseCSV } from './parse-csv';
+import { showTreeMap } from './renderer';
 
-const text = document.getElementById('tips');
+const text = document.querySelector('#tips') as HTMLParagraphElement;
 
-const inputfile = document.getElementById('inputfile');
+const inputfile = document.querySelector('#inputfile') as HTMLInputElement;
 
 inputfile.addEventListener('change', function () {
-  var fr = new FileReader();
-  fr.onload = function () {
-    const root = parseCSV(fr.result);
-    text.innerText = root.description.split('\r\n').join(', ');
+  const fr = new FileReader();
+  fr.addEventListener('load', function () {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const root = parseCSV(fr.result! as string);
+    text.textContent = root.description.split('\r\n').join(', ');
     showTreeMap(root);
+  });
+
+  if (this.files) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    fr.readAsText(this.files[0]!);
   }
+});
 
-  fr.readAsText(this.files[0]);
-})
-
-fetch('Process Hacker Processes.csv')
-//fetch('Process Explorer Processes.tsv')
+await fetch('Process Hacker Processes.csv')
+// await fetch('Process Explorer Processes.tsv')
   .then(function (response) {
     return response.text();
   })

@@ -1,8 +1,22 @@
 {
   "compilerOptions": {
     "module": "ESNext",
+    "target": "ES2022",
+    "lib": [
+      "DOM",
+      "ES2022"
+    ],
     "noImplicitAny": true,
     "allowJs": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true
   },
   "include": [
     "src/**/*"

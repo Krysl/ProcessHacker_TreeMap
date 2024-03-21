@@ -1,0 +1,94 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/strict",
+        "plugin:unicorn/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "project": ["./tsconfig.json"],
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "isaacscript"
+    ],
+    "rules": {
+        "@typescript-eslint/naming-convention": "warn",
+        "curly": "warn",
+        "eqeqeq": "warn",
+        "no-throw-literal": "warn",
+        "semi": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
+        "@typescript-eslint/strict-boolean-expressions": [
+            "error",
+            {
+                "allowNullableString": true,
+                "allowNullableBoolean": true
+            }
+        ],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                "groups": [
+                    "/^vscode$/",
+                    "module",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ],
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false,
+                "allowSeparatedGroups": false
+            }
+        ],
+        "unicorn/no-negated-condition": "off",
+        "unicorn/prevent-abbreviations": [
+            "error",
+            {
+                "allowList": {
+                    "thisArgs": true,
+                    "args": true,
+                    "arg": true
+                }
+            }
+        ],
+        "unicorn/no-useless-undefined": [
+            "error",
+            {
+                "checkArguments": false
+            }
+        ],
+        "isaacscript/strict-enums": "error"
+    },
+    "ignorePatterns": [
+        "scripts/**/*.mjs",
+        "src/test/runTest.ts",
+        "src/test/suite/index.ts",
+        "node_modules",
+        "_docs",
+        "out",
+        "dist"
+    ]
+}
