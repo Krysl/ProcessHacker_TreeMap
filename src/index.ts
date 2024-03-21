@@ -17,6 +17,7 @@ inputfile.addEventListener('change', function () {
 })
 
 fetch('Process Hacker Processes.csv')
+//fetch('Process Explorer Processes.tsv')
   .then(function (response) {
     return response.text();
   })
