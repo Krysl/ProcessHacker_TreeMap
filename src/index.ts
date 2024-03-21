@@ -20,8 +20,8 @@ inputfile.addEventListener('change', function () {
   }
 });
 
-// await fetch('Process Hacker Processes.csv')
-await fetch('Process Explorer Processes.tsv')
+await fetch('Process Hacker Processes.csv')
+// await fetch('Process Explorer Processes.tsv')
   .then(function (response) {
     return response.text();
   })

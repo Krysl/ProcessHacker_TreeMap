@@ -16,6 +16,9 @@ const ramdomByNameColor = (d: d3.HierarchyNode<TreeNode>) => {
     return d.data.color;
   }
   const name = d.data.name.replace('+...', '');
+  if(isIdle(name)){
+    return '#666';
+  }
   let c: number;
   if (colorMap.has(name)) {
     c = colorMap.get(name) ?? 0;

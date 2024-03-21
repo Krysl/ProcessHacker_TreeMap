@@ -84,8 +84,9 @@ export function parseCSV(csvData: string): TreeNode {
     records = csvParse(csvData.slice(csvStart));
     csvInfo = csvData.slice(0, csvStart - 2);
   } else {
+    const tsvEnd = csvData.search(/(\r?\n){2}/);
     csvInfo = 'From process Explorer';
-    records = tsvParse(csvData);
+    records = tsvParse(csvData.slice(0, tsvEnd));
   }
   console.log(csvInfo);
   // console.log(records);
